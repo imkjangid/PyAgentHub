@@ -76,12 +76,12 @@ python -m venv <env_name>
 <strong>Windows Command Prompt</strong>
 
 ```bash
-env_name\Scripts\activate
+env_name/Scripts/activate
 ```
 
 <strong>Bash: Windows</strong>
 ```bash
-source env_name\Scripts\activate
+source env_name/Scripts/activate
 ```
 
 <strong>Bash: macOS/Linux</strong>
@@ -106,6 +106,13 @@ pip install --upgrade pip
 
 ```bash
 pip install openai langchain python-dotenv
+```
+<p style="text-align:center;">Optional but useful::</p>
+
+<strong>Bash or Command Prompt</strong>
+
+```bash
+pip install faiss-cpu duckduckgo-search requests
 ```
 
 <h4 style="text-align:center;">8. Configure Environment Variables</h4>
@@ -141,6 +148,8 @@ print("Environment is ready!")
 └── requirements.txt      # Optional: freeze dependencies
 </pre>
 
+<p style="text-align:center;">STEP 1: Import required libraries:</p>
+
 ```python
 import os
 from dotenv import load_dotenv
@@ -148,23 +157,34 @@ from langchain.chat_models import ChatOpenAI
 from langchain.agents import initialize_agent, AgentType
 from langchain.tools import Tool
 from langchain.utilities import DuckDuckGoSearchAPIWrapper
+```
+<p style="text-align:center;">STEP 2: Load environment variables from <code>.env</code></p>
 
-# 1. Load environment variables from .env
+```python
 load_dotenv()
+```
 
-# 2. Get your API key
+<p style="text-align:center;">STEP 3: Get your API key</p>
+
+```python
 openai_api_key = os.getenv("OPENAI_API_KEY")
 if not openai_api_key:
     raise ValueError("OPENAI_API_KEY not found in .env file")
+```
 
-# 3. Initialize the LLM
+<p style="text-align:center;">STEP 4: Initialize the LLM</p>
+
+```python
 llm = ChatOpenAI(
     temperature=0,
     model="gpt-3.5-turbo",  # Change to gpt-4 if available
     openai_api_key=openai_api_key
 )
+```
 
-# 4. Add a simple search tool
+<p style="text-align:center;">STEP 5: Add a simple search tool</p>
+
+```python
 search = DuckDuckGoSearchAPIWrapper()
 tools = [
     Tool(
@@ -173,16 +193,22 @@ tools = [
         description="Search the web for current information"
     )
 ]
+```
 
-# 5. Create the agent
+<p style="text-align:center;">STEP 6: Create the agent</p>
+
+```python
 agent = initialize_agent(
     tools,
     llm,
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True
 )
+```
 
-# 6. Run the agent
+<p style="text-align:center;">STEP 7: Run the agent</p>
+
+```python
 if __name__ == "__main__":
     query = "What's the latest news about AI agents?"
     print(f"🤖 Asking agent: {query}")
