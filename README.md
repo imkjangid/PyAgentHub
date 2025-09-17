@@ -11,7 +11,7 @@
 <h3 style="text-align:center;">Introduction to AI Agents</h3>
 <p style="text-align:center;">An AI agent is an autonomous system that senses its environment through inputs and influences it through outputs. Its core purpose is to accomplish one or more defined goals. These agents can range from simple rule-based responders to advanced learning systems capable of adapting to dynamic conditions.</p>
 <p style="text-align:center;">
-<img src="./site-images/ai-architecture.svg" alt="AI Agent Architecture" style="width:60%">
+<img src="./site-images/ai-architecture.svg" alt="AI Agent Architecture">
 </p>
 
 <h3 style="text-align:center;">Key Components of an AI Agent</h3>
@@ -34,36 +34,30 @@
 <h3 style="text-align:center;">Setting Up the Environment</h3>
 <p style="text-align:center;">This involves installing Python and the necessary libraries.</p>
 
-<h4 style="text-align:center;">Installing Python</h4>
+<h4 style="text-align:center;">1. Installing Python</h4>
 <p style="text-align:center;">Don’t have Python yet? Download and install the latest Python release from <a href="https://www.python.org" target="_blank">https://www.python.org ↗</a>, following the OS-specific installation steps.</p>
 <p style="text-align:center; border: 1px solid #06d; padding: 10px;"><strong>Tip:</strong> On Windows, during installation, check <code>Add Python to PATH</code> to make it accessible from the command line.
 </p>
-<center>↓</center>
 
-<h4 style="text-align:center;">Verify Installation</h4>
+<h4 style="text-align:center;">2. Verify Installation</h4>
 <p style="text-align:center;">Open a terminal or command prompt and run:</p>
 <pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>python --version</pre>
 
 <p style="text-align:center;">You should see the installed Python version (e.g., Python 3.xx.x).
 </p>
-<center>↓</center>
 
-<h4 style="text-align:center;">Create a Project Directory</h4>
+<h4 style="text-align:center;">3. Create a Project Directory</h4>
 <p style="text-align:center;">Organize your work by creating a dedicated folder:</p>
 <pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>mkdir ai-agent
 cd ai-agent
 </pre>
 
-<center>↓</center>
-
-<h4 style="text-align:center;">Set Up a Virtual Environment</h4>
+<h4 style="text-align:center;">4. Set Up a Virtual Environment</h4>
 <p style="text-align:center;">A virtual environment keeps your project dependencies isolated.</p>
 <pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>python -m venv <your_env_name>
 </pre>
 
-<center>↓</center>
-
-<h4 style="text-align:center;">Activate the Virtual Environment</h4>
+<h4 style="text-align:center;">5. Activate the Virtual Environment</h4>
 <p style="text-align:center;">A virtual environment keeps your project dependencies isolated.</p>
 <table style="width: 100%;">
     <tr>
@@ -76,26 +70,24 @@ cd ai-agent
     </tr>
 </table>
 
-<center>↓</center>
-
-<h4 style="text-align:center;">Upgrade pip</h4>
+<h4 style="text-align:center;">6. Upgrade pip</h4>
 <p style="text-align:center;">Ensure you have the latest package manager:</p>
 <pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>pip install --upgrade pip
 </pre>
 
-<center>↓</center>
-
-<h4 style="text-align:center;">Install Required Packages</h4>
+<h4 style="text-align:center;">7. Install Required Packages</h4>
 <p style="text-align:center;">For a basic AI agent setup:</p>
 <pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>pip install openai langchain python-dotenv
 </pre>
 
-<center>↓</center>
-
-<h4 style="text-align:center;">Configure Environment Variables</h4>
+<h4 style="text-align:center;">8. Configure Environment Variables</h4>
 <p style="text-align:center;">Create a <code>.env</code> file in your project root to store API keys securely
 :</p>
-<pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>OPENAI_API_KEY=your_openai_key_here
+<pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>
+
+```bash
+OPENAI_API_KEY=your_openai_key_here
+```
 </pre>
 
 <p style="text-align:center;">Load it in your Python code:</p>
@@ -105,9 +97,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ```
 
-<center>↓</center>
-
-<h4 style="text-align:center;">Test the Setup</h4>
+<h4 style="text-align:center;">9. Test the Setup</h4>
 <p style="text-align:center;">Run a quick Python check:</p>
 
 ```python
@@ -115,9 +105,7 @@ print("Environment is ready!")
 ```
 <p style="text-align:center;">If no errors appear, your environment is successfully configured.</p>
 
-<center>↓</center>
-
-<h4 style="text-align:center;">🚀 Run a Starter AI Agent</h4>
+<h4 style="text-align:center;">10. 🚀 Run a Starter AI Agent</h4>
 <p style="text-align:center;">Once your environment is ready, you can test it by creating <code>agent.py</code> with a minimal AI agent that uses LangChain and the OpenAI API.</p>
 
 <pre style="border: 1px solid #06d; padding: 10px;"><strong>📂 Project Structure</strong><hr>ai-agent/
@@ -176,8 +164,6 @@ if __name__ == "__main__":
     response = agent.run(query)
     print("\nAgent Response:\n", response)
 ```
-<center>↓</center>
-
 <h3 style="text-align:center;">Test the Agent</h3>
 <p style="text-align:center;">Activate your virtual environment:</p>
 
