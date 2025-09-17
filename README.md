@@ -41,7 +41,12 @@
 
 <h4 style="text-align:center;">2. Verify Installation</h4>
 <p style="text-align:center;">Open a terminal or command prompt and run:</p>
-<pre style="border: 1px solid #06d; padding: 10px;"><strong>Bash or Command Prompt</strong><hr>python --version</pre>
+
+<strong>Bash or Command Prompt</strong>
+
+```bash
+python --version
+```
 
 <p style="text-align:center;">You should see the installed Python version (e.g., Python 3.xx.x).
 </p>
