@@ -107,6 +107,10 @@ pip install --upgrade pip
 ```bash
 pip install openai langchain python-dotenv
 ```
+- `openai` → Talk to OpenAI’s models.
+- `langchain` → Build structured, multi-step AI workflows.
+- `python-dotenv` → Securely manage API keys and config
+
 <p style="text-align:center;">Optional but useful::</p>
 
 <strong>Bash or Command Prompt</strong>
@@ -114,6 +118,10 @@ pip install openai langchain python-dotenv
 ```bash
 pip install faiss-cpu duckduckgo-search requests
 ```
+
+- `faiss-cpu` → Fast vector search for knowledge retrieval.
+- `duckduckgo-search` → Live web search tool.
+- `requests` → General-purpose HTTP client for API calls.
 
 <h4 style="text-align:center;">8. Configure Environment Variables</h4>
 <p style="text-align:center;">Create a <code>.env</code> file in your project root to store API keys securely:</p>
